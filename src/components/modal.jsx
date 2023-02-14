@@ -6,12 +6,16 @@ import { useContext } from "react";
 import { ModalContext } from "../context/modal";
 
 const Modal = () => {
-    const { setModalActive } = useContext(ModalContext);
-    
-    
+	const { setModalActive } = useContext(ModalContext);
+
+	const modalCloseHandler = (e) => {
+		setModalActive(false);
+	};
+
 	return (
-		<div className={styles["modal-section"]}>
-			<div  className={styles["modal"]}>
+		<>
+			<div onClick={modalCloseHandler} className={styles.overlay}></div>
+			<div className={styles["modal-section"]}>
 				<div className={styles["modal-content"]}>
 					<div className={styles["modal-header"]}>
 						<h3 className={styles["modal-title"]}>
@@ -67,7 +71,7 @@ const Modal = () => {
 					</div>
 				</div>
 			</div>
-		</div>
+		</>
 	);
 };
 

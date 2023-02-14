@@ -17,15 +17,15 @@ const AdminUser = () => {
 					className={styles["admin-image"]}
 					width={"300px"}
 					height={"300px"}
-					src={user.image}
+					src={user?.image}
 					alt="profile"
 				/>
 			</div>
 			<div className={styles["admin-content"]}>
 				<h3>Hush kelibsiz !!</h3>
-				<h4>Username: {user.username} </h4>
-				<p>Bio: {user.bio}</p>
-				<p>Bio: {user.email}</p>
+				<h4>Username: {user?.username} </h4>
+				<p>Bio: {user?.bio}</p>
+				<p>Bio: {user?.email}</p>
 				<button
 					onClick={() => setModalActive(true)}
 					className={styles["admin-btn"]}>

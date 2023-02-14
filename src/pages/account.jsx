@@ -12,7 +12,7 @@ import Modal from "../components/modal";
 const Account = () => {
 	const [value, setValue] = useState(1);
 	const navigate = useNavigate();
-	const { modalActive, setModalActive } = useContext(ModalContext);
+	const { modalActive } = useContext(ModalContext);
 
 	const btnHandler = (e) => {
 		setValue(e.target.dataset.id);
@@ -20,9 +20,7 @@ const Account = () => {
 		if (+value === 2) {
 			navigate("/account/posts");
 		}
-    };
-    
-
+	};
 
 	if (modalActive) {
 		document.body.style.overflow = "hidden";
@@ -30,9 +28,7 @@ const Account = () => {
 		document.body.style.overflow = "auto";
 	}
 
-	const modalCloseHandler = (e) => {
-		setModalActive(false);
-	};
+
 
 	return (
 		<div className="container">
@@ -46,13 +42,11 @@ const Account = () => {
 
 				<AdminActive />
 
-                <AdminPay />
-                
-                {modalActive ? <Modal /> : null}
-                
-				{modalActive ? (
-					<div onClick={modalCloseHandler} className="overlay"></div>
-				) : null}
+				<AdminPay />
+
+				{modalActive ? <Modal /> : null}
+
+				
 			</div>
 		</div>
 	);

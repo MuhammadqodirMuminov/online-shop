@@ -337,14 +337,7 @@ ul {
   width: 140px;
 }
 
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: 109;
-}
+
 
 .footer hr {
   border: none;
