@@ -43,7 +43,7 @@ const Single = () => {
 	}
 
 	return (
-		<div className={`${classes.wrapper} container`}>
+		<div className={`${classes.wrapper}`}>
 			<h2 className={classes.title}>
 				<span>Name: </span>
 				{singleCard?.title}

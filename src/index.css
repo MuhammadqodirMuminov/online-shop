@@ -187,12 +187,7 @@ h4 {
   position: relative;
 }
 
-.icon__search {
-  position: absolute;
-  top: 12px;
-  left: 15px;
-  font-size: 20px;
-}
+
 
 .searchInput {
   border: 2px solid #28292a9e;

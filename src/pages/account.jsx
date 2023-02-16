@@ -28,26 +28,17 @@ const Account = () => {
 		document.body.style.overflow = "auto";
 	}
 
-
-
 	return (
-		<div className="container">
-			<div className={styles.admin}>
-				<ButtonAdmin
-					dataAccountBtn={dataAccountBtn}
-					btnHandler={btnHandler}
-				/>
+		<div className={styles.admin}>
+			<ButtonAdmin dataAccountBtn={dataAccountBtn} btnHandler={btnHandler} />
 
-				<AdminUser />
+			<AdminUser />
 
-				<AdminActive />
+			<AdminActive />
 
-				<AdminPay />
+			<AdminPay />
 
-				{modalActive ? <Modal /> : null}
-
-				
-			</div>
+			{modalActive ? <Modal /> : null}
 		</div>
 	);
 };
