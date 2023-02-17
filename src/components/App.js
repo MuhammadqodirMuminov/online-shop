@@ -52,24 +52,22 @@ const App = () => {
 		}
 	}, []);
 
-    return (
-			<>
-				<div className="container">
-					<Navbar />
-					<Routes>
-						<Route path="/" element={<Main />} />
-						<Route path="/login" element={<Login />} />
-						<Route path="/register" element={<Register />} />
-						<Route path="/account" element={<Account />} />
-						<Route path="/category/:id" element={<ProductCategory />} />
-						<Route path="/products/:id" element={<Single />} />
-						<Route path="/account/posts" element={<Posts />} />
-						<Route path="*" element={<NotFount />} />
-					</Routes>
-				</div>
-					<Footer />
-			</>
-		);
+	return (
+		<>
+				<Navbar />
+				<Routes>
+					<Route path="/" element={<Main />} />
+					<Route path="/login" element={<Login />} />
+					<Route path="/register" element={<Register />} />
+					<Route path="/account" element={<Account />} />
+					<Route path="/category/:id" element={<ProductCategory />} />
+					<Route path="/products/:id" element={<Single />} />
+					<Route path="/account/posts" element={<Posts />} />
+					<Route path="*" element={<NotFount />} />
+				</Routes>
+			<Footer />
+		</>
+	);
 };
 
 export default App;

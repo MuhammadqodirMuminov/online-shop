@@ -9,7 +9,7 @@ const AllProduct = ({ product }) => {
 			<img
 				style={{ width: "292px", height: "292px", borderRadius:'10px' }}
 				src={product.thumbnail}
-				alt=""
+				alt="product img"
 			/>
 			<h4>{product.title}</h4>
 		{findStars(product.rating)}

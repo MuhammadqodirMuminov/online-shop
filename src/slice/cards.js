@@ -4,6 +4,7 @@ const initialState = {
 	isloading: false,
 	cards: [],
 	singleCard: null,
+	searchCard: null,
 	error: null,
 };
 
@@ -37,6 +38,20 @@ export const cardSlice = createSlice({
 		getSingleCardFailore: (state) => {
 			state.isloading = false;
 		},
+
+		searchCardStart: (state) => {
+			state.isloading = true;
+		},
+
+		searchCardSuccess: (state, action) => {
+			state.isloading = false;
+			state.searchCard = action.payload;
+		},
+
+		searchCardFailore: (state, action) => {
+			state.isloading = false;
+			state.error = action.payload;
+		},
 	},
 });
 
@@ -47,6 +62,9 @@ export const {
 	getSingleCardStart,
 	getSingleCardFailore,
 	getSingleCardSuccess,
+	searchCardStart,
+	searchCardSuccess,
+	searchCardFailore,
 } = cardSlice.actions;
 
 export default cardSlice.reducer;

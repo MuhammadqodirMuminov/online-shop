@@ -1,11 +1,10 @@
 import AllProducts from "./allProducts";
 import Categories from "./categories";
-import Pagination from "./Pagination";
 import Slider from "./slider";
 
 const Main = () => {
 	return (
-		<>
+		<div className="container">
 			<div className="main__hero">
 				<Categories />
 				<Slider />
@@ -21,7 +20,7 @@ const Main = () => {
 				</select>
 			</div>
 			<AllProducts />
-		</>
+		</div>
 	);
 };
 
