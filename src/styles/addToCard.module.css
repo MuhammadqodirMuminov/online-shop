@@ -1,0 +1,18 @@
+.addToCardCount {
+
+  background-color:#f77867;
+  color: black;
+  padding: 1px 4px;
+  border-radius: 4px;
+}
+
+.adminIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.adminIcon i {
+  margin: 0 auto;
+}

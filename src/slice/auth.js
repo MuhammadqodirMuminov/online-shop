@@ -19,22 +19,22 @@ export const AuthSlice = createSlice({
 		signUserSuccess: (state, action) => {
 			state.isLoading = false;
 			state.loggedIn = true;
-            state.user = action.payload;
+			state.user = action.payload;
 			setItem("token", action.payload.token);
 		},
 
 		signUserFailore: (state, action) => {
 			state.isLoading = false;
 			state.error = action.payload;
-        },
-        
-        logOutUser: (state) => {
-            state.user = null;
-            state.loggedIn = false;
-        }
+		},
+
+		logOutUser: (state) => {
+			state.user = null;
+			state.loggedIn = false;
+		},
 	},
 });
 
-export const { signUserStart,logOutUser, signUserSuccess, signUserFailore } =
+export const { signUserStart, logOutUser, signUserSuccess, signUserFailore } =
 	AuthSlice.actions;
 export default AuthSlice.reducer;

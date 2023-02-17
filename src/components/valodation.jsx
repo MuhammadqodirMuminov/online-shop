@@ -2,17 +2,17 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { removeItem } from "../helpers/persistance";
 import { logOutUser } from "../slice/auth";
+import classes from "../styles/addToCard.module.css";
 
 const Valodation = () => {
-    const navigate = useNavigate();
-    const dispatch = useDispatch();
-    const { loggedIn } = useSelector((state) => state.auth);
-   
+	const navigate = useNavigate();
+	const dispatch = useDispatch();
+	const { loggedIn } = useSelector((state) => state.auth);
 
 	const logOuthandler = () => {
-        dispatch(logOutUser())
+		dispatch(logOutUser());
 		navigate("/login");
-        removeItem("token");
+		removeItem("token");
 	};
 
 	return (
@@ -21,12 +21,14 @@ const Valodation = () => {
 				<Link className="navbar-link" to={"/"}>
 					<li>
 						<i className="fa-solid fa-bag-shopping user"></i>
-						<span className="user-span">Savat</span>
+						<p className="user-span">
+							Savat <span className={classes.addToCardCount}>0</span>
+						</p>
 					</li>
 				</Link>
 				{loggedIn ? (
 					<Link to={"./account"}>
-						<li>
+						<li >
 							<i className="fa-solid fa-user user"></i>
 						</li>
 					</Link>

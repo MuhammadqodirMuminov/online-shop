@@ -1,3 +1,31 @@
-.product__card:hover{
-  box-shadow:  3px 4px 5px #1c1a1a;
+.product__card {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 10px;
+}
+
+.product__card:hover {
+	box-shadow: 3px 4px 5px #bfbebe;
+	border-radius: 20px;
+}
+
+.addtoCard {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+#addBtn {
+	margin: 0px 10px 5px;
+	font-size: 28px !important;
+	cursor: pointer;
+}
+
+#fovoriteBtn {
+	margin: 0px 10px 5px;
+
+	font-size: 28px !important;
+	cursor: pointer;
 }
