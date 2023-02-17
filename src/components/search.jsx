@@ -1,8 +1,12 @@
-import { useEffect } from "react";
+import {  useEffect } from "react";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import SearchServise from "../service/search";
-import { searchCardFailore, searchCardStart, searchCardSuccess } from "../slice/cards";
+import {
+	searchCardFailore,
+	searchCardStart,
+	searchCardSuccess,
+} from "../slice/cards";
 
 const Search = () => {
 	const [value, setValue] = useState("");
@@ -16,17 +20,15 @@ const Search = () => {
 		try {
 			const responce = await SearchServise.searchcards(value);
 
-			dispatch(searchCardSuccess(responce.products));
-    } catch (error) {
-
-      dispatch(searchCardFailore('error at searchcard'));
-    }
+			dispatch(searchCardSuccess(responce.products)); 
+		} catch (error) {
+			dispatch(searchCardFailore("error at searchcard"));
+		}
 	};
 
-
 	useEffect(() => {
-		searchData();
-	}, []);
+		value !== "" && searchData();
+	}, [value]);
 
 	return (
 		<form onSubmit={searchData}>

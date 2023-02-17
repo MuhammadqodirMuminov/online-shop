@@ -47,7 +47,7 @@ const Valodation = () => {
 
 				{loggedIn ? (
 					<li onClick={logOuthandler}>
-						<i class="fa-solid fa-right-from-bracket user"></i>
+						<i className="fa-solid fa-right-from-bracket user"></i>
 						<span className="user-span">log out</span>
 					</li>
 				) : null}

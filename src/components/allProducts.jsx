@@ -7,37 +7,44 @@ import Pagination from "./Pagination";
 let PageSize = 8;
 
 const AllProducts = () => {
-  const { isloading, cards } = useSelector((state) => state.cards);
-  const [currentPage, setCurrentPage] = useState(1);
+	const { isloading, cards, searchCard } = useSelector((state) => state.cards);
+	const [currentPage, setCurrentPage] = useState(1);
 
-  const currentTableData = useMemo(() => {
+	const currentTableData = useMemo(() => {
     const firstPageIndex = (currentPage - 1) * PageSize;
+    
     const lastPageIndex = firstPageIndex + PageSize;
-    return cards.slice(firstPageIndex, lastPageIndex);
-  }, [currentPage, cards]);
+    
+		return cards.slice(firstPageIndex, lastPageIndex);
+	}, [currentPage, cards]);
 
-  if (isloading) {
-    return <Loader />;
-  }
+	if (isloading) {
+		return <Loader />;
+	}
 
-  return (
-    <>
-      <div className="row">
-        {currentTableData.map((product, i) => (
-          <AllProduct key={i} product={product} />
-        ))}
+	return (
+		<>
+			<div className="row">
+				{searchCard !== null
+					? searchCard.map((product, i) => (
+							<AllProduct key={i} product={product} />
+					  ))
+					: currentTableData.map((product, i) => (
+							<AllProduct key={i} product={product} />
+					  ))}
       </div>
-      <div className='pagination-wrapper'>
-        <Pagination
-          className="pagination-bar"
-          currentPage={currentPage}
-          totalCount={cards.length}
-          pageSize={PageSize}
-          onPageChange={(page) => setCurrentPage(page)}
-        />
-      </div>
-    </>
-  );
+      
+			<div className="pagination-wrapper">
+				<Pagination
+					className="pagination-bar"
+					currentPage={currentPage}
+					totalCount={cards.length}
+					pageSize={PageSize}
+					onPageChange={(page) => setCurrentPage(page)}
+				/>
+			</div>
+		</>
+	);
 };
 
 export default AllProducts;

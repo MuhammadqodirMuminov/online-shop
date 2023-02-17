@@ -9,9 +9,10 @@ const ProductCategories = () => {
 	const { id } = useParams();
 	const [products, setProducts] = useState([]);
 	const [loading, setLoading] = useState(false);
-  const { searchCard } = useSelector((state) => state.cards);
-  
-  console.log(searchCard,'salom');
+
+	const { searchCard } = useSelector((state) => state);
+
+	console.log(searchCard);
 
 	useEffect(() => {
 		setLoading(true);
@@ -37,14 +38,9 @@ const ProductCategories = () => {
 		<div className="container">
 			<h3 className={classes.title}>{id}</h3>
 			<div className="row">
-				{searchCard !== null
-					? searchCard.map((product, i) => (
-							<ProductCategory key={i} product={product} />
-					  ))
-					: products.map((product, i) => (
-							<ProductCategory key={i} product={product} />
-          ))
-        }
+				{products.map((product, i) => (
+					<ProductCategory key={i} product={product} />
+				))}
 			</div>
 		</div>
 	);
